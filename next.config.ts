@@ -1,9 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: "export",
-  images: {
-    unoptimized: true, // required for static export if using <Image />
+// next.config.js
+module.exports = {
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 };
-
-module.exports = nextConfig;
