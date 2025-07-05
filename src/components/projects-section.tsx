@@ -1,108 +1,94 @@
+"use client"
+
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { ExternalLink, Github } from "lucide-react"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import Image from "next/image"
+import { Github, Globe } from "lucide-react"
 
 export function ProjectsSection() {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description:
-        "A full-stack e-commerce solution built with Next.js, Stripe, and PostgreSQL. Features include user authentication, product management, and order processing.",
-      image: "/placeholder.svg?height=200&width=400",
-      technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Tailwind CSS"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
-    },
-    {
-      title: "Task Management App",
-      description:
-        "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image: "/placeholder.svg?height=200&width=400",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Material-UI"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
-    },
-    {
-      title: "Weather Dashboard",
-      description:
-        "A responsive weather dashboard that displays current weather conditions and forecasts using external APIs with beautiful data visualizations.",
-      image: "/placeholder.svg?height=200&width=400",
-      technologies: ["React", "Chart.js", "OpenWeather API", "CSS3"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
-    },
-    {
       title: "Portfolio Website",
-      description:
-        "A modern, responsive portfolio website built with Next.js and Tailwind CSS, featuring smooth animations and optimized performance.",
-      image: "/placeholder.svg?height=200&width=400",
+      description: "A modern, responsive portfolio website built with Next.js and Tailwind CSS, featuring smooth animations and optimized performance.",
+      image: "/images/projects/portfolio.png",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      liveUrl: "https://your-portfolio.vercel.app",
+      githubUrl: "https://github.com/vedgohel/portfolio",
+      note: "This project was built using Next.js, and it&apos;s fully responsive.",
     },
     {
-      title: "Blog Platform",
-      description:
-        "A full-featured blog platform with content management, user authentication, comments system, and SEO optimization.",
-      image: "/placeholder.svg?height=200&width=400",
-      technologies: ["Next.js", "Prisma", "PostgreSQL", "NextAuth.js"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      title: "WanderLust - Travel App",
+      description: "A travel platform where users can explore destinations, view listings, and make bookings. Integrated with MongoDB and Express.",
+      image: "/images/projects/wanderlust.png",
+      technologies: ["Node.js", "Express", "MongoDB", "EJS"],
+      liveUrl: "https://wanderlust-demo.vercel.app",
+      githubUrl: "https://github.com/vedgohel/WonderLust",
+      note: "This project was built using Node.js and Express, and it&apos;s mobile-friendly.",
     },
     {
-      title: "Chat Application",
-      description:
-        "Real-time chat application with private messaging, group chats, file sharing, and emoji support using WebSocket technology.",
-      image: "/placeholder.svg?height=200&width=400",
-      technologies: ["React", "Node.js", "Socket.io", "Express", "MongoDB"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      title: "Stock Dashboard Clone",
+      description: "A Zerodha-like stock dashboard with features like buy/sell modals, real-time holdings, and transaction tracking using MongoDB Atlas.",
+      image: "/images/projects/stock-dashboard.png",
+      technologies: ["React", "Tailwind", "Express", "MongoDB"],
+      liveUrl: "https://stock-dash.vercel.app",
+      githubUrl: "https://github.com/vedgohel/zerodha-dashboard",
+      note: "This project features real-time UI updates and charts powered by MongoDB.",
     },
   ]
 
   return (
-    <section id="projects" className="py-20 bg-muted/30">
+    <section id="projects" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4">
-            My Work
-          </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Here are some of the projects I've worked on recently. Each one represents a unique challenge and learning
-            experience.
+            Explore some of the projects I&apos;ve worked on — from personal websites to full-stack applications.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20"></div>
+            <Card key={index} className="flex flex-col justify-between shadow-md hover:shadow-lg transition-shadow">
               <CardHeader>
+                <div className="relative w-full h-40 rounded-md overflow-hidden mb-4">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
                 <CardTitle className="text-xl">{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
+                <p className="text-sm text-muted-foreground">{project.description}</p>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-2">
                   {project.technologies.map((tech, techIndex) => (
                     <Badge key={techIndex} variant="secondary" className="text-xs">
                       {tech}
                     </Badge>
                   ))}
                 </div>
+                {project.note && (
+                  <p
+                    className="text-sm text-muted-foreground mt-2"
+                    dangerouslySetInnerHTML={{ __html: project.note }}
+                  />
+                )}
               </CardContent>
-              <CardFooter className="flex gap-2">
-                <Button size="sm" asChild>
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Live Demo
-                  </a>
-                </Button>
-                <Button size="sm" variant="outline" asChild>
+              <CardFooter className="flex justify-between">
+                <Button variant="outline" size="sm" asChild>
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4" />
-                    Code
+                    GitHub
+                  </a>
+                </Button>
+                <Button size="sm" asChild>
+                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                    <Globe className="mr-2 h-4 w-4" />
+                    Live Demo
                   </a>
                 </Button>
               </CardFooter>

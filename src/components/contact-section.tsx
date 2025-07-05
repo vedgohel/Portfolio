@@ -32,10 +32,10 @@ export function ContactSection() {
 
     emailjs
       .sendForm(
-        "service_rzbqg4q",       // ✅ Your Service ID
-        "template_5tbymq7",      // ✅ Your Template ID
+        "service_rzbqg4q",
+        "template_5tbymq7",
         formRef.current,
-        "FzFuuGkhotFnq-tqT"      // ✅ Your Public Key
+        "FzFuuGkhotFnq-tqT"
       )
       .then(() => {
         alert("✅ Message sent successfully!")
@@ -76,10 +76,10 @@ export function ContactSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4">Get In Touch</Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Let&apos;s Connect</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            I'm always interested in new opportunities, collaborations, and learning experiences.
-            Let's discuss how we can work together on exciting projects.
+            I&apos;m always interested in new opportunities, collaborations, and learning experiences.
+            Let&apos;s discuss how we can work together on exciting projects.
           </p>
         </div>
 
@@ -88,7 +88,15 @@ export function ContactSection() {
           <Card>
             <CardHeader>
               <CardTitle>Send me a message</CardTitle>
-              <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
+              <CardDescription>
+                Fill out the form below and I&apos;ll get back to you as soon as possible.
+              </CardDescription>
+              <div className="space-y-2 mt-4 text-muted-foreground text-sm">
+                <p>Let&apos;s connect and create something extraordinary!</p>
+                <p>I&apos;m currently open to freelance projects and collaborations.</p>
+                <p>Feel free to reach out — I&apos;ll get back to you soon.</p>
+                <p>It&apos;s always exciting to meet new people and ideas!</p>
+              </div>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} ref={formRef} className="space-y-6">

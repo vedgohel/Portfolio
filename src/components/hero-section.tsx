@@ -22,7 +22,7 @@ export function HeroSection() {
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left space-y-6">
             <div className="space-y-2">
-              <p className="text-lg text-muted-foreground">Hello, I'm</p>
+              <p className="text-lg text-muted-foreground">Hello, I  I&apos;m</p>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Ved Gohel
               </h1>

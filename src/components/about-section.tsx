@@ -33,10 +33,12 @@ export function AboutSection() {
           <Badge variant="secondary" className="mb-4">
             About Me
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Computer Science Student & Developer</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Computer Science Student & Developer
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            I'm a dedicated Computer Science student currently pursuing BE at Government Engineering College, Patan.
-            With a strong foundation from my Diploma and practical industry experience, I'm passionate about creating
+            I&apos;m a dedicated Computer Science student currently pursuing BE at Government Engineering College, Patan.
+            With a strong foundation from my Diploma and practical industry experience, I&apos;m passionate about creating
             innovative digital solutions.
           </p>
         </div>
@@ -48,18 +50,30 @@ export function AboutSection() {
             <div className="space-y-4 text-muted-foreground">
               <p>
                 My journey in computer science began with a Diploma in Computer Engineering from Shri K.J Polytechnic,
-                Bharuch (2021-2024), where I built a solid foundation in programming fundamentals, computer systems, and
+                Bharuch (2021–2024), where I built a solid foundation in programming fundamentals, computer systems, and
                 software development principles.
               </p>
               <p>
-                Currently, I'm in my second year of Bachelor of Engineering in Computer Science at Government
-                Engineering College, Patan, where I'm diving deeper into advanced topics like data structures,
+                Currently, I&apos;m in my second year of Bachelor of Engineering in Computer Science at Government
+                Engineering College, Patan, where I&apos;m diving deeper into advanced topics like data structures,
                 algorithms, software engineering, and modern development frameworks.
               </p>
               <p>
                 My academic journey has been complemented by practical industry experience through internships at Nexis
                 Infotech, where I gained hands-on experience in both web and mobile app development. This combination of
                 theoretical knowledge and practical skills drives my passion for creating innovative solutions.
+              </p>
+              <p>
+                I&apos;m passionate about creating beautiful and functional user interfaces.
+              </p>
+              <p>
+                It&apos;s not just about code — it&apos;s about the experience.
+              </p>
+              <p>
+                Let&apos;s build something amazing together!
+              </p>
+              <p>
+                When I&apos;m not coding, I&apos;m probably exploring new design trends.
               </p>
             </div>
           </div>
